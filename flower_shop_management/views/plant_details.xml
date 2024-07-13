@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+	<record id="plant_details_form" model="ir.ui.view">
+				<field name="name">Plant details form</field>
+				<field name="model">plant.details</field>
+				<field name="arch" type="xml">
+					<form>
+					<sheet>
+					<group>
+					<group>	
+							
+						<field name="name" />
+						<field name="color_ids" widget="many2many_tags" />
+						<field name="plant_type" />
+						<field name="flowering_type" />
+						<field name="brand_id" />
+						<field name="material_feature" />
+						<field name="speacial_feature" />
+						<field name="sunlight_exposure" />
+						<field name="expected_blooming" />
+					</group>
+					<group>
+						<field name="image" widget="image"/>
+							
+					</group>
+					</group>
+					</sheet>			
+					</form>
+				</field>
+			</record>			
+		 <record id="plant_details_tree" model="ir.ui.view">
+			<field name="name">Plant details tree</field>
+			<field name="model">plant.details</field>
+			<field name="arch" type="xml">
+				<tree >
+					<field name="name"/>
+					<field name="plant_type" />
+					<field name="flowering_type" />
+					<field name="expected_blooming" />
+					<field name="brand_id" />
+				</tree>			
+			</field>
+			</record> 
+			
+			<record id="plant_details_kanban" model="ir.ui.view">
+            <field name="name">Plant details kanban</field>
+            <field name="model">plant.details</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile">
+                    <field name="name"/>
+                    <field name="plant_type" />
+                    <field name="flowering_type" />
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <strong>Name : <field name="name"/></strong>
+                                    </div>
+                                     <div class="col-6 text-end">
+                                        <span class="badge rounded-pill" ><t t-esc="record.flowering_type.value"/></span>
+                                    </div> 
+                                </div>
+                                 <div>
+                                    <strong>Type : </strong><t t-esc="record.plant_type.value"/>
+                                </div> 
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        
+        <record id="plant_details_pivot" model="ir.ui.view">
+         <field name="name">Plant details pivot</field>
+         <field name="model">plant.details</field>
+         <field name="arch" type="xml">
+             <pivot string="Plant Details" sample="1">
+                 <field name="name" type="col"/>
+                 
+             </pivot>
+         </field>
+    </record>
+    
+    <record id="plant_details_views_search" model="ir.ui.view">
+		<field name="name">plant details search</field>
+		<field name="model">plant.details</field>
+		<field name="arch" type="xml">
+			<search>
+				<field name="name"/>
+				<field name="flowering_type"/>
+				<field name="brand_id"/>
+								
+				<filter name="filter_indoor" string="Indoor Plants"
+						domain="[('plant_type','=','indoor')]" />
+						
+				<filter name="filter_outdoor" string="Outdoor Plants"
+					domain="[('plant_type','=','outdoor')]" />
+					
+				<filter name="filter_flowering" string="Flowering Plants"
+					domain="[('flowering_type','=','flowering')]" />
+					
+				<filter name="filter_nonflowering" string="Non Flowering Plants"
+					domain="[('flowering_type','=','non_flowering')]" />
+					
+								
+				<group expand="0" string="Group By">
+						<filter string="Type" name="type"
+							context="{'group_by':'plant_type'}" />
+						<filter string="Flowering Type" name="flowering_type"
+							context="{'group_by':'flowering_type'}" />
+											
+				</group>               
+            </search>
+		</field>
+	</record>
+			
+			<record id="action_for_plant_details" model="ir.actions.act_window">
+			<field name="name">Plants</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">plant.details</field>
+			<field name="view_mode">tree,form,kanban,pivot</field>
+			<field name="context"></field>
+			<field name="help" type="html">
+				<p>Plants</p>
+			</field>
+		</record>	
+		<record id="action_for_flowering_plants" model="ir.actions.act_window">
+			<field name="name">Flowering Plants</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">plant.details</field>
+			<field name="view_mode">tree,form,kanban,pivot</field>
+			<field name="domain">[('flowering_type','=','flowering')]</field>
+			<field name="help" type="html">
+				<p>Flowering Plants</p>
+			</field>
+		</record>	
+		<record id="action_for_non_flowering_plants" model="ir.actions.act_window">
+			<field name="name">Non Flowering Plants</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">plant.details</field>
+			<field name="view_mode">tree,form,kanban,pivot</field>			
+			<field name="domain">[('flowering_type','=','non_flowering')]</field>
+			<field name="help" type="html">
+				<p>Non Flowering Plants</p>
+			</field>
+		</record>	
+		</data>
+</odoo>
+		

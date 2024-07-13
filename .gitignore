@@ -5,6 +5,8 @@ __pycache__/
 
 # C extensions
 *.so
+PIVOT/pivot_14/.git/
+PIVOT/pivot_14/.gitignore/
 
 # Distribution / packaging
 .Python

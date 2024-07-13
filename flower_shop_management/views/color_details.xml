@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+	<record id="color_details_form" model="ir.ui.view">
+				<field name="name">color details form</field>
+				<field name="model">color.details</field>
+				<field name="arch" type="xml">
+					<form>
+					<group>	
+							
+					<field name="name" string="Name"/>
+					<field name="code" />
+					</group>
+							
+					</form>
+				</field>
+			</record>			
+		 <record id="color_details_tree" model="ir.ui.view">
+			<field name="name">color details tree</field>
+			<field name="model">color.details</field>
+			<field name="arch" type="xml">
+				<tree >
+					<field name="name"/>
+					<field name="code"/>
+				</tree>			
+			</field>
+			</record> 
+			
+			       
+			
+			<record id="action_for_color_details" model="ir.actions.act_window">
+			<field name="name">Colors</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">color.details</field>
+			<field name="view_mode">tree,form</field>
+			<field name="context"></field>
+			<field name="help" type="html">
+				<p>Colors</p>
+			</field>
+		</record>	
+		</data>
+</odoo>
+		

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id='report_inherit_sale_order' inherit_id="sale.report_saleorder_document">
+            
+             <xpath expr="//div[@name='signature']" position="after">
+             <br></br>
+             <div class="offset-8 text-center">
+             <th name="global_discount" class="offset-8 text-center"><span><strong>Global Discount:</strong></span></th>
+            
+               <td name="td_global_discount" class="offset-8 text-center"><span t-field="doc.global_discount"/></td>
+                </div> 
+                <div class="offset-8 text-center">
+               <th name="total" class="text-center"><span><strong>Total After Discount:</strong></span></th>
+            
+                <td name="td_amount_total"><span t-field="doc.amount_total"/></td>                        
+                 </div>     
+                               
+            </xpath> 
+            
+            
+       </template>
+    </data>
+</odoo>

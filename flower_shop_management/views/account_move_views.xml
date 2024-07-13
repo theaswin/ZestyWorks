@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>				
+		<record id="account_move_inherit" model="ir.ui.view">
+			<field name="name">account.move.inherit</field>			
+			<field name="model">account.move</field>
+			<field name="inherit_id" ref="account.view_move_form" />			
+			<field name="arch" type="xml">
+				
+                <field name="invoice_date" position="after">
+						<field name="global_discount"/>						
+				</field>	              
+			</field>			
+		</record>
+		 <record id="account.action_move_out_invoice_type" model="ir.actions.act_window">
+            <field name="res_model">account.move</field>            
+            <field name="domain">[('invoice_line_ids.product_id.is_flower','=',True)]</field>
+           
+            
+        </record> 
+	</data>
+</odoo>

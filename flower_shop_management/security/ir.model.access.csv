@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_plant_details,access.plant.details,model_plant_details,,1,1,1,1
+access_color_details,access.color.details,model_color_details,,1,1,1,1
+access_brand_details,access.brand.details,model_brand_details,,1,1,1,1
+access_sale_reports,access.sale.reports,model_sale_reports,,1,1,1,1
+access_related_user,access.related.user,model_related_user,,1,1,1,1
+
+access_hr_employee_flower,access.hr_employee_flower,model_hr_employee,flower_shop_management.user_group,1,0,0,0

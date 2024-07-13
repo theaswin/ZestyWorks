@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>	
+    
+     <record id="view_hr_employee_form" model="ir.ui.view">
+			<field name="name">view.hr.employee.form.inherit</field>
+			<field name="model">hr.employee</field>
+			<field name="inherit_id" ref="hr.view_employee_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='work_email']" position="after">
+					<field name="rel_id" />
+					
+				</xpath>
+				 <field name="parent_id" position="attributes">
+						<attribute name="invisible">1</attribute>
+				</field>
+				<field name="coach_id" position="attributes">
+						<attribute name="invisible">1</attribute>
+				</field>
+				
+			</field>
+		</record> 
+		          
+		
+	 <record id="hr.open_view_employee_list_my" model="ir.actions.act_window">
+            <field name="name">Staffs</field>
+            <field name="res_model">hr.employee</field>
+           
+        
+        </record> 
+        
+        <record id="action_create_user" model="ir.actions.server">
+        <field name="name">Update Related User </field>
+        <field name="type">ir.actions.server</field>
+        <field name="model_id" ref="flower_shop_management.model_hr_employee"/>       
+        <field name="binding_model_id" ref="flower_shop_management.model_hr_employee"/>
+        <field name="state">code</field>
+         <field name="code">
+			 if records:
+			 	action=records.action_create_rel_user()
+		</field>       
+    	</record>		
+		
+	
+		
+        
+    </data>
+</odoo>

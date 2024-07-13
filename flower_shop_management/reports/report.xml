@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- <record id="action_report_plant" model="ir.actions.report">
+        <field name="name">Plant sale Report</field>
+        <field name="model">sale.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">flower_shop_management.report_plant</field>
+        <field name="report_file">flower_shop_management.report_plant</field>
+        <field name="binding_model_id" ref="model_sale_order"/>
+       
+    </record> -->
+    
+    <record id="action_report_plant_sale" model="ir.actions.report">
+        <field name="name">Plant Sale Report</field>
+        <field name="model">sale.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">flower_shop_management.report_plant</field>
+        <field name="report_file">flower_shop_management.report_plant</field>
+        <field name="binding_model_id" ref="model_sale_order"/>
+       
+    </record>
+    
+</odoo>

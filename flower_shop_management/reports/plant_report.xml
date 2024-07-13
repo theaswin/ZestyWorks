@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<template id='report_plant'>
+			<t t-call='web.html_container'>
+				<t t-foreach='docs' t-as='o'>
+					<t t-call='web.external_layout'>
+						<div class='page'>
+							<div class="col-12">
+								
+								<h3 style='text-align: center;'>Sale Report of Plants</h3>
+							</div>
+							<br>
+							<br></br>
+							</br>
+							
+							
+							<br />
+							<strong style='text-align: center; padding: 10px;'>Type : Indoor</strong>
+<!-- 							<span style='text-align: center; padding: 10px;' t-field="o.product_template_id.name" />
+ -->							<br />
+							
+							<br/>							
+							
+							<br />
+							
+							<br />
+							<br >	
+							</br>
+							<div class="row">
+                                <div class="col-12">									
+									<table border="1" cellpadding="0" cellspacing="0" style="min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;">
+                                        <thead>
+                                            <tr>
+                                                <th align="center" style="width: 30%" scope="col">Flower</th>
+                                                <th align="center" style="width: 30%" scope="col">Description</th>
+                                                <th align="center" style="width: 20%" scope="col">Quantity</th>
+                                                <th align="center" style="width: 20%" scope="col">Unit Price</th>
+                                                <th align="center" style="width: 20%" scope="col">Sub Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                       
+      
+	                                       	<t t-foreach="o.order_line" t-as="line">
+	                                       	  <t t-if="line.product_template_id.plant_type == 'indoor'">
+												   <tr>
+													   <td align="center"><span t-field="line.product_template_id.name" /></td>	 												  								   
+													   <td align="center"><span t-field="line.name" /> </td>
+									   				   <td align="center"><span t-field="line.product_uom_qty" /></td>												   												  
+													   <td align="center"><span t-field="line.price_unit" /></td>												  
+													   <td align="center"><span t-field="line.price_subtotal" /></td> 												 											  
+												    </tr> 
+											</t>
+										  </t>		
+										  
+										  <br></br>	
+
+										  						
+										</tbody>
+                                    </table>
+                                    
+                                    
+                                    <br></br>
+                                    <br></br>
+                                    <!-- <div style='text-align: center; padding: 10px;'>
+										<strong>Sale Total : </strong>
+										<span t-field="o.sale_total" /> 
+										<br />
+									</div>    -->                              
+							</div>
+						</div>
+						
+													<strong style='text-align: center; padding: 10px;'>Type : Outdoor</strong>
+<!-- 							<span style='text-align: center; padding: 10px;' t-field="o.product_template_id.name" />
+ -->							<br />
+							
+							<br/>							
+							
+							<br />
+							
+							<br />
+							<br >	
+							</br>
+							<div class="row">
+                                <div class="col-12">									
+									<table border="1" cellpadding="0" cellspacing="0" style="min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;">
+                                        <thead>
+                                            <tr>
+                                                <th align="center" style="width: 30%" scope="col">Flower</th>
+                                                <th align="center" style="width: 30%" scope="col">Description</th>
+                                                <th align="center" style="width: 20%" scope="col">Quantity</th>
+                                                <th align="center" style="width: 20%" scope="col">Unit Price</th>
+                                                <th align="center" style="width: 20%" scope="col">Sub Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                       
+      
+	                                       	<t t-foreach="o.order_line" t-as="line">
+	                                       	  <t t-if="line.product_template_id.plant_type == 'outdoor'">
+												   <tr>
+													   <td align="center"><span t-field="line.product_template_id.name" /></td>	 												  								   
+													   <td align="center"><span t-field="line.name" /> </td>
+									   				   <td align="center"><span t-field="line.product_uom_qty" /></td>												   												  
+													   <td align="center"><span t-field="line.price_unit" /></td>												  
+													   <td align="center"><span t-field="line.price_subtotal" /></td> 												 											  
+												    </tr> 
+											</t>
+										  </t>		
+										  
+										  <br></br>	
+
+										  						
+										</tbody>
+                                    </table>
+                                    
+                                    
+                                    <br></br>
+                                    <br></br>
+                                    <!-- <div style='text-align: center; padding: 10px;'>
+										<strong>Sale Total : </strong>
+										<span t-field="o.sale_total" /> 
+										<br />
+									</div>    -->                              
+							</div>
+						</div>
+						<br></br>
+						<div style='text-align: right; padding: 10px;'>
+										<strong>Sale Total : </strong>
+										<span t-field="o.amount_total" /> 
+										<br />
+									</div>  
+						</div>
+					</t>
+				</t>
+			</t>
+		</template>
+	</data>
+</odoo>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<odoo> 	
+	<!-- Main Menu--> 	
+	<menuitem id="menu_flower_shop_management" 	 
+	name="Flower Shop Management" 	 
+	action="action_for_plant_details"
+	sequence="1"/> 	 
+	<menuitem id="menu_plant" 	 
+	name="Plants"  
+	parent="menu_flower_shop_management"
+	sequence="1"/> 	
+	
+	<menuitem id="menu_flowering" 	 
+	name="Flowering Plants" 	 
+	action="action_for_flowering_plants"
+	parent="menu_plant"
+	sequence="0"/> 	 
+	
+	<menuitem id="menu_non_flowering" 	 
+	name="Non Flowering Plants" 	 
+	action="action_for_non_flowering_plants"
+	parent="menu_plant"
+	sequence="1"/> 	 
+	
+	<menuitem id="menu_flower" 	 
+	name="Flowers"  
+	action="product.product_normal_action_sell"
+	parent="menu_flower_shop_management"
+	sequence="2"/> 	
+	
+	<menuitem id="menu_order" 	 
+	name="Orders"  	
+	parent="menu_flower_shop_management"
+	sequence="3"/> 	
+	
+	<menuitem id="menu_sale" 	 
+	name="Sale" 	 
+	action="sale.action_quotations_with_onboarding"
+	parent="menu_order"
+	sequence="0"/> 
+	
+	<menuitem id="menu_invoice" 	 
+	name="Invoice" 	 
+	action="account.action_move_out_invoice_type"
+	parent="menu_order"
+	sequence="1"/> 	
+	
+	<menuitem id="menu_staff" 	 
+	name="Staffs"  
+	action="hr.open_view_employee_list_my"
+	parent="menu_flower_shop_management"
+	sequence="4"/> 	
+	
+	<menuitem id="menu_configuration" 	 
+	name="Configuration" 	 
+	parent="menu_flower_shop_management"
+	sequence="5"/> 	
+	
+	<menuitem id="menu_color" 	 
+	name="Color" 	 
+	action="action_for_color_details"
+	parent="menu_configuration"
+	sequence="0"/> 	 
+	
+	<menuitem id="menu_brand" 	 
+	name="Brand" 	 
+	action="action_for_brand_details"
+	parent="menu_configuration"
+	sequence="1"/> 
+	
+	
+	
+	 <menuitem id="menu_reports" 	 
+	name="Reports" 	 
+	parent="menu_flower_shop_management"
+	sequence="6"/> 	 
+	
+	<menuitem id="menu_sale_order_report" 	 
+	name="Sale order Reports" 	 
+	action="action_sale_report_wizard"
+	parent="menu_reports"
+	sequence="0"/>  
+	
+	
+	
+	 	 	 
+</odoo>
+

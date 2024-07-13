@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+		<record id="view_sale_details_form" model="ir.ui.view">
+			<field name="name">view.sale.details.form</field>
+			<field name="model">sale.reports</field>
+			<field name="arch" type="xml">
+				<form string="Wizard">
+				<group>
+								<field name="from_date"/>
+								<field name="to_date"/>
+						 		<!-- <field name="plant_type"/> -->                                
+				 </group>
+                 <footer>
+						<button string="Pdf" name="print_pdf" type="object"/>
+						<button  string="Excel"  name="print_excel" type="object"/>						
+				</footer> 
+					
+				</form>
+			</field>
+		</record>
+		
+		<record id="action_sale_report_wizard" model="ir.actions.act_window">
+		<field name="name">Sale Reports</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">sale.reports</field>
+		<field name="view_mode">form</field>
+		<field name="view_id" ref="flower_shop_management.view_sale_details_form"/>
+		<field name="target">new</field>
+		</record> 
+		
+		
+</odoo>	
